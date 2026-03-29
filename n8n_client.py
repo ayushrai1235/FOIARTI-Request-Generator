@@ -1,99 +1,82 @@
 """
-n8n_client.py — n8n webhook integration for FOIA/RTI Request Generator.
-
-Handles POST requests to the n8n webhook endpoint after letter generation.
-Designed to fail gracefully — n8n errors never crash the CLI.
+n8n_client.py — Webhook trigger for n8n automation workflows.
+Fails gracefully — n8n errors never crash the CLI.
 """
-
 import os
-
 import click
 import requests as req
 from dotenv import load_dotenv
 
-
-# Load environment variables
 load_dotenv()
 
 
 def trigger_n8n(payload: dict) -> bool:
     """
-    Send a webhook POST request to n8n with the request payload.
+    POST the request payload to the n8n PRODUCTION webhook URL.
 
-    The payload follows the schema defined in TRD §4.4:
-    {
-        "request_id": "FOIA-2025-A7F3C2D1",
-        "agency_name": "U.S. Department of Agriculture",
-        "agency_email": "ams.foia@usda.gov",
-        "jurisdiction": "federal",
-        "subject": "Slaughterhouse inspection records Iowa 2023",
-        "requester_name": "Jane Doe",
-        "date_sent": "2025-01-15",
-        "response_due": "2025-02-14",
-        "letter_text": "...(full letter)...",
-        "output_file": "output/FOIA-2025-A7F3C2D1.txt"
-    }
+    Uses the production URL (not webhook-test) so the workflow:
+    - Stays active and accepts all 5 demo requests continuously
+    - Does not stop after one execution
+    - Auto-triggers every time python demo.py runs
 
-    Args:
-        payload: Dictionary containing request metadata and letter text.
-
-    Returns:
-        True if webhook was successfully triggered, False otherwise.
+    Returns True if notified successfully, False otherwise.
     """
     url = os.getenv(
         "N8N_WEBHOOK_URL",
-        "http://localhost:5678/webhook/foia-request",
+        "https://ayushrai2222.app.n8n.cloud/webhook/foia-request",
     )
     enabled = os.getenv("N8N_ENABLED", "true").lower() == "true"
 
     if not enabled:
-        click.echo(
-            click.style(
-                "  ℹ  n8n integration disabled → skipped",
-                fg="yellow",
-            )
-        )
+        click.echo(click.style(
+            "  o  n8n disabled → skipped (N8N_ENABLED=false)", fg="cyan"
+        ))
         return False
 
+    # Warn if someone accidentally uses the test URL
+    if "webhook-test" in url:
+        click.echo(click.style(
+            "  !  WARNING: You are using the TEST webhook URL.\n"
+            "     It only accepts ONE request then stops.\n"
+            "     Change N8N_WEBHOOK_URL to use /webhook/ not /webhook-test/",
+            fg="yellow",
+        ))
+
+    click.echo(click.style(
+        f"  >  Sending to n8n: {url}", fg="cyan"
+    ))
+
     try:
-        resp = req.post(url, json=payload, timeout=5)
-        if resp.status_code == 200:
-            click.echo(
-                click.style(
-                    "  ✓  n8n notified → webhook triggered",
-                    fg="magenta",
-                )
-            )
+        resp = req.post(url, json=payload, timeout=10)
+        if resp.status_code in (200, 201):
+            click.echo(click.style(
+                f"  OK  n8n notified → webhook triggered (HTTP {resp.status_code})",
+                fg="magenta",
+            ))
             return True
         else:
-            click.echo(
-                click.style(
-                    f"  ⚠  n8n warning → HTTP {resp.status_code}",
-                    fg="yellow",
-                )
-            )
-            return False
-    except req.exceptions.ConnectionError:
-        click.echo(
-            click.style(
-                "  ⚠  n8n offline → skipped (letter still saved)",
+            click.echo(click.style(
+                f"  !  n8n warning → HTTP {resp.status_code}: {resp.text[:120]}",
                 fg="yellow",
-            )
-        )
+            ))
+            return False
+
+    except req.exceptions.ConnectionError:
+        click.echo(click.style(
+            "  !  n8n unreachable → check your N8N_WEBHOOK_URL in .env\n"
+            "     Letter is still saved locally.",
+            fg="yellow",
+        ))
         return False
     except req.exceptions.Timeout:
-        click.echo(
-            click.style(
-                "  ⚠  n8n timeout → skipped (letter still saved)",
-                fg="yellow",
-            )
-        )
+        click.echo(click.style(
+            "  !  n8n timeout (>10s) → letter still saved locally.",
+            fg="yellow",
+        ))
         return False
-    except Exception:
-        click.echo(
-            click.style(
-                "  ⚠  n8n error → skipped (letter still saved)",
-                fg="yellow",
-            )
-        )
+    except Exception as exc:
+        click.echo(click.style(
+            f"  !  n8n error → {exc}\n     Letter still saved locally.",
+            fg="yellow",
+        ))
         return False

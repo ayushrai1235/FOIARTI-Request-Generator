@@ -139,7 +139,7 @@ def print_tracking_table():
 @click.option(
     "--list-agencies", is_flag=True, default=False, help="Show all valid agency keys."
 )
-@click.option("--update-status", is_flag=True, default=False, help="Update request status.")
+@click.option("--update-status", "update_status_flag", is_flag=True, default=False, help="Update request status.")
 @click.option("--id", "request_id", type=str, default=None, help="Request ID for status update.")
 @click.option(
     "--status",

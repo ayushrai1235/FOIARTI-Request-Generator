@@ -7,3 +7,5 @@ __pycache__/
 requests.db
 tracker.db
 n8n_client.db
+output
+walkthrough.md
