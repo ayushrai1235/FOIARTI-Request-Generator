@@ -1,0 +1,36 @@
+Request ID: {{ request_id }}
+Date: {{ date }}
+
+{{ agency_officer }}
+{{ agency_full_name }}
+{{ agency_address }}
+{{ agency_city_state_zip }}
+Email: {{ agency_email }}
+
+RE: Texas Public Information Act Request — {{ request_id }}
+
+Dear {{ agency_officer }}:
+
+Pursuant to the {{ law_name }}, {{ citation }}, I hereby request access to and copies of the following public information:
+
+{{ records_description }}
+
+This request is made in the interest of promoting government transparency and public accountability. The records sought relate to regulatory activities conducted by your agency that are of significant public interest.
+
+FEE WAIVER REQUEST:
+Pursuant to {{ fee_waiver_citation }}, I request a waiver of charges for this request. The information sought is intended to benefit the general public by furthering the understanding of the operations and activities of the government and is not primarily in my commercial interest. If a complete fee waiver is not available, please advise me of the estimated charges before proceeding so that I may limit the scope of my request if necessary.
+
+RESPONSE DEADLINE:
+Under the {{ law_name }}, {{ citation }}, your agency is required to promptly produce public information for inspection or copying. You must request an Attorney General decision within {{ response_days }} {{ response_day_type }} days if you wish to withhold the requested information. Based on today's date, the deadline for such a ruling request is {{ response_due }}.
+
+EXEMPTION NOTICE:
+If any information is withheld pursuant to an exception under {{ exemption_citation }}, I request that you specify the particular exception relied upon for each item withheld and provide a written explanation of how the exception applies, consistent with the requirements of the {{ law_name }}.
+
+PREFERRED FORMAT:
+I would prefer to receive responsive records in electronic format (PDF or other commonly used digital format) sent to the email address listed below.
+
+Thank you for your prompt attention to this request. I look forward to receiving a timely response.
+
+Sincerely,
+
+{{ requester_name }}

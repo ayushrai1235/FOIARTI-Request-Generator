@@ -1,0 +1,36 @@
+Request ID: {{ request_id }}
+Date: {{ date }}
+
+{{ agency_officer }}
+{{ agency_full_name }}
+{{ agency_address }}
+{{ agency_city_state_zip }}
+Email: {{ agency_email }}
+
+RE: Freedom of Information Law Request — {{ request_id }}
+
+Dear {{ agency_officer }}:
+
+Pursuant to the {{ law_name }}, {{ citation }}, I hereby request access to and copies of the following records:
+
+{{ records_description }}
+
+This request is submitted in the interest of public transparency. The records sought concern government operations and regulatory activities of significant public interest, and their disclosure will contribute to public understanding and accountability.
+
+FEE WAIVER REQUEST:
+Pursuant to {{ fee_waiver_citation }}, I request a waiver of any fees associated with this request. The disclosure of these records serves the public interest by contributing to the understanding of the operations and activities of government, and this request is not made for commercial purposes. Should a full fee waiver not be possible, I am willing to pay reasonable reproduction costs not to exceed $25.00. Please inform me of any charges exceeding this amount before processing.
+
+RESPONSE DEADLINE:
+Under the {{ law_name }}, {{ citation }}, your agency is required to grant or deny access to records within {{ response_days }} {{ response_day_type }} days of receipt of this request. Based on today's date, the response is due by {{ response_due }}.
+
+EXEMPTION NOTICE:
+If any records or portions thereof are denied under {{ exemption_citation }}, I request that you provide a written explanation of the basis for each denial, specifying the particular exemption relied upon, consistent with the requirements of the {{ law_name }}.
+
+PREFERRED FORMAT:
+I would prefer to receive responsive records in electronic format (PDF or other commonly used digital format) sent to the email address listed below.
+
+Thank you for your attention to this request. I look forward to your timely response.
+
+Sincerely,
+
+{{ requester_name }}

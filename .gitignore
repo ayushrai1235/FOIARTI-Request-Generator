@@ -1,0 +1,9 @@
+.env
+.venv
+__pycache__/
+*.pyc
+*.sqlite3
+*.db
+requests.db
+tracker.db
+n8n_client.db

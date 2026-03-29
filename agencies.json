@@ -1,0 +1,47 @@
+{
+  "USDA": {
+    "full_name": "U.S. Department of Agriculture",
+    "jurisdiction": "federal",
+    "foia_officer": "FOIA Officer",
+    "foia_email": "ams.foia@usda.gov",
+    "mailing_address": "1400 Independence Ave SW",
+    "city_state_zip": "Washington, DC 20250",
+    "online_portal": "efoia.usda.gov"
+  },
+  "FDA": {
+    "full_name": "U.S. Food and Drug Administration",
+    "jurisdiction": "federal",
+    "foia_officer": "FOIA Staff",
+    "foia_email": "fdafoia@fda.hhs.gov",
+    "mailing_address": "5630 Fishers Lane, Room 1035",
+    "city_state_zip": "Rockville, MD 20857",
+    "online_portal": "fda.hhs.gov/regulatory-information/foia"
+  },
+  "CA_CDFA": {
+    "full_name": "California Department of Food and Agriculture",
+    "jurisdiction": "california",
+    "foia_officer": "Public Records Coordinator",
+    "foia_email": "publicrecords@cdfa.ca.gov",
+    "mailing_address": "1220 N Street",
+    "city_state_zip": "Sacramento, CA 95814",
+    "online_portal": "cdfa.ca.gov"
+  },
+  "TX_DSHS": {
+    "full_name": "Texas Department of State Health Services",
+    "jurisdiction": "texas",
+    "foia_officer": "Open Records Coordinator",
+    "foia_email": "dshs.openrecords@dshs.texas.gov",
+    "mailing_address": "P.O. Box 149347",
+    "city_state_zip": "Austin, TX 78714-9347",
+    "online_portal": "dshs.texas.gov"
+  },
+  "India_MoAFW": {
+    "full_name": "Ministry of Agriculture and Farmers Welfare",
+    "jurisdiction": "india",
+    "foia_officer": "Central Public Information Officer",
+    "foia_email": "rti-moafw@nic.in",
+    "mailing_address": "Krishi Bhawan, Dr. Rajendra Prasad Road",
+    "city_state_zip": "New Delhi - 110 001",
+    "online_portal": "rtionline.gov.in"
+  }
+}

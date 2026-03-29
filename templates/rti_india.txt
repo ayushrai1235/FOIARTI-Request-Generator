@@ -1,0 +1,39 @@
+Request ID: {{ request_id }}
+Date: {{ date }}
+
+To,
+{{ agency_officer }}
+{{ agency_full_name }}
+{{ agency_address }}
+{{ agency_city_state_zip }}
+Email: {{ agency_email }}
+
+Subject: Application under the {{ law_name }} — {{ request_id }}
+
+Respected Sir/Madam,
+
+I, {{ requester_name }}, am an Indian citizen and hereby submit this application under the {{ law_name }}, {{ citation }}, to seek the following information:
+
+{{ records_description }}
+
+APPLICATION FEE:
+I am enclosing the prescribed application fee of ₹10 (Rupees Ten only) as required under Section 6 of the {{ law_name }}. The fee is payable via Indian Postal Order / Demand Draft / Court Fee Stamp, as applicable.
+
+FEE WAIVER REQUEST:
+If I fall within the category of persons eligible for a fee waiver under {{ fee_waiver_citation }}, I request that the applicable fees for providing the information be waived. The information requested is sought in the public interest to enhance transparency and accountability in government operations, and this request is not made for any commercial purpose.
+
+RESPONSE DEADLINE:
+Under the {{ law_name }}, {{ citation }}, the Central Public Information Officer is required to provide the requested information within {{ response_days }} {{ response_day_type }} days of receipt of this application. Based on today's date, the response is due by {{ response_due }}.
+
+EXEMPTION NOTICE:
+If any information is denied under {{ exemption_citation }}, I request that the specific clause of Section 8 relied upon be cited, along with a written explanation of why the exemption applies. I also request that any severable portion of the record that does not fall within an exemption be provided as required under Section 10 of the {{ law_name }}.
+
+PREFERRED FORMAT:
+I would prefer to receive the information in the form of photocopies or in electronic format, as may be convenient.
+
+I trust that this application will be processed within the stipulated time and I shall receive the requested information promptly.
+
+Thanking you,
+
+{{ requester_name }}
+(Indian Citizen)

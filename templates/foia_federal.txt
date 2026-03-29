@@ -1,0 +1,36 @@
+Request ID: {{ request_id }}
+Date: {{ date }}
+
+{{ agency_officer }}
+{{ agency_full_name }}
+{{ agency_address }}
+{{ agency_city_state_zip }}
+Email: {{ agency_email }}
+
+RE: Freedom of Information Act Request — {{ request_id }}
+
+Dear {{ agency_officer }}:
+
+Pursuant to the {{ law_name }}, {{ citation }}, I hereby request access to and copies of the following records:
+
+{{ records_description }}
+
+I am requesting these records to further public understanding of government operations and regulatory enforcement activities. This request is made for non-commercial purposes.
+
+FEE WAIVER REQUEST:
+Pursuant to {{ fee_waiver_citation }}, I request a full fee waiver on the grounds that disclosure of this information is in the public interest because it is likely to contribute significantly to public understanding of the operations or activities of the government and is not primarily in my commercial interest. If a full fee waiver is not granted, I am willing to pay up to $25.00 in reproduction costs. Please notify me before incurring any expenses beyond that amount.
+
+RESPONSE DEADLINE:
+Under {{ citation }}, your agency is required to respond to this request within {{ response_days }} {{ response_day_type }} days of receipt. Based on today's date, the response is due by {{ response_due }}.
+
+EXEMPTION NOTICE:
+If any portion of the requested records is withheld under an exemption provided by {{ exemption_citation }}, I request that you provide an index of those records, identifying each withheld document, the specific exemption claimed, and a brief explanation of how each exemption applies to the withheld material, as required by Vaughn v. Rosen, 484 F.2d 820 (D.C. Cir. 1973).
+
+PREFERRED FORMAT:
+I would prefer to receive responsive records in electronic format (PDF or other commonly used digital format) sent to the email address listed below.
+
+Thank you for your prompt attention to this request. I look forward to your response within the statutory timeframe.
+
+Sincerely,
+
+{{ requester_name }}

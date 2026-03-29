@@ -1,0 +1,59 @@
+{
+  "federal": {
+    "law_name": "Freedom of Information Act",
+    "short_name": "FOIA",
+    "citation": "5 U.S.C. § 552",
+    "fee_waiver_citation": "5 U.S.C. § 552(a)(4)(A)(iii)",
+    "exemption_citation": "5 U.S.C. § 552(b)",
+    "response_days": 20,
+    "response_day_type": "business",
+    "letter_prefix": "FOIA",
+    "template": "foia_federal.txt"
+  },
+  "california": {
+    "law_name": "California Public Records Act",
+    "short_name": "CPRA",
+    "citation": "Cal. Gov. Code § 7920 et seq.",
+    "fee_waiver_citation": "Cal. Gov. Code § 7922.530",
+    "exemption_citation": "Cal. Gov. Code § 7927.700",
+    "response_days": 10,
+    "response_day_type": "calendar",
+    "letter_prefix": "CPRA",
+    "template": "foia_california.txt"
+  },
+  "texas": {
+    "law_name": "Texas Public Information Act",
+    "short_name": "TPIA",
+    "citation": "Tex. Gov't Code Ch. 552",
+    "fee_waiver_citation": "Tex. Gov't Code § 552.267",
+    "exemption_citation": "Tex. Gov't Code Ch. 552, Subch. C",
+    "response_days": 10,
+    "response_day_type": "business",
+    "letter_prefix": "TPIA",
+    "template": "foia_texas.txt"
+  },
+  "new_york": {
+    "law_name": "Freedom of Information Law",
+    "short_name": "FOIL",
+    "citation": "N.Y. Pub. Off. Law §§ 84–90",
+    "fee_waiver_citation": "N.Y. Pub. Off. Law § 87(1)(c)",
+    "exemption_citation": "N.Y. Pub. Off. Law § 87(2)",
+    "response_days": 5,
+    "response_day_type": "business",
+    "letter_prefix": "FOIL",
+    "template": "foia_new_york.txt"
+  },
+  "india": {
+    "law_name": "Right to Information Act, 2005",
+    "short_name": "RTI",
+    "citation": "RTI Act, 2005 (Act No. 22 of 2005)",
+    "fee_waiver_citation": "Section 7(5) of the RTI Act, 2005",
+    "exemption_citation": "Section 8 of the RTI Act, 2005",
+    "response_days": 30,
+    "response_day_type": "calendar",
+    "letter_prefix": "RTI",
+    "template": "rti_india.txt",
+    "application_fee": "10",
+    "application_fee_currency": "INR"
+  }
+}
