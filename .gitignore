@@ -9,3 +9,5 @@ tracker.db
 n8n_client.db
 output
 walkthrough.md
+node_modules
+frontend/node_modules

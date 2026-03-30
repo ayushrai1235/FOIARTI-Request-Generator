@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", sans-serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-canvas: #f6fafe;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f0f4f8;
+
+  --color-primary: #4b41e1;
+  --color-primary-hover: #645efb;
+  --color-secondary: #831ada;
+  
+  --color-text-main: #171c1f;
+  --color-text-muted: #464554;
+  
+  --color-outline: #c7c4d7;
+  
+  --color-sent: #eab308;
+  --color-responded: #22c55e;
+  --color-overdue: #ef4444;
+  --color-closed: #64748b;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0px 12px 32px rgba(23, 28, 31, 0.06);
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+  }
+  .ghost-border {
+    border: 1px solid rgba(199, 196, 215, 0.4);
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+  }
+}
